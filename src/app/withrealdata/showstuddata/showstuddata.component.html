@@ -1,0 +1,29 @@
+
+
+
+<p-table [value]="studentData">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Username</th>  
+            <th>Update</th> 
+            <th>Delete</th>         
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-student>
+        <tr>
+            <td>{{student.firstName}}</td>
+            <td>{{student.lastName}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.course}}</td>
+            <td>{{student.userName}}</td>   
+            <td> <button class="btn btn-primary" (click)="updateData(student.id)">Update</button> </td> 
+            <td> <button class="btn btn-primary" (click)="deleteData(student.id)">Delete</button> </td>         
+        </tr>
+    </ng-template>
+</p-table>

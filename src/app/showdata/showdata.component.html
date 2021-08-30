@@ -1,0 +1,24 @@
+
+
+
+<h3 class="text-info">User Data</h3>
+
+<table class="table table-stripped" *ngIf="boolData">
+    <tr>
+        <th *ngFor="let header of tableHeader">{{header}} </th>
+    </tr>
+    <tr *ngFor="let dt of userData">
+        <td >{{dt.firstname}}</td>
+        <td >{{dt.lastname}}</td>
+        <td >{{dt.email}}</td>
+        <td >{{dt.selectedCourse}}</td>
+        <td >{{dt.gender}}</td>
+        <td >{{dt.username}}</td>
+        <td> <button class="btn btn-primary" (click)="updateDate(dt)">Update </button> </td>
+        <td> <button class="btn btn-primary" (click)="deleteData(dt)">Delete </button></td>
+    </tr>
+</table>
+
+<div class="container" *ngIf ="!boolData">
+    <h3 class="text-warning">There is no data </h3>
+</div>
